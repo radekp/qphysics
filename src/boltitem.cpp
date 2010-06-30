@@ -109,7 +109,6 @@
    void BoltItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
 {
 
-
         // simple selection indicator
         if ( this->isSelected() )
         {
