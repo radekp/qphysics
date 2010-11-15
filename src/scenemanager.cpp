@@ -128,12 +128,8 @@ void SceneManager::deleteItem(QPointF pos)
 
     void SceneManager::deleteSelectedItems()
     {
-        QList<QGraphicsItem *> selected;
-        selected = _scene->selectedItems();
-
-        foreach (QGraphicsItem *item, selected) {
-            PhysicsItem *physicsItem = qgraphicsitem_cast<PhysicsItem *>(item);
-            delete physicsItem;
+        while(_scene->selectedItems().size() > 0){
+            delete _scene->selectedItems().first();
         }
 
     }
@@ -222,6 +218,8 @@ void SceneManager::deleteItem(QPointF pos)
             delete physicsItem;
         }
     }
+
+
 
     int items;
     out >> items;
