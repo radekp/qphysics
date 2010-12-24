@@ -53,16 +53,19 @@ void SceneManager::currentItemChanged(QModelIndex idx)
 
     if(obj == "Edit Items"){
     _view->setDragMode(QGraphicsView::RubberBandDrag);
+    _view->setCursor(Qt::ArrowCursor);
+
     for(int i = 0; i < items.size();i++){
     PhysicsItem *item = dynamic_cast<PhysicsItem*>( items.at(i) );
+
     if(!simulator->running){
     item->setEditingEnabled(true);
-
-}
+    }
     }
 
     } else {
     _view->setDragMode(QGraphicsView::NoDrag);
+    _view->setCursor(Qt::CrossCursor);
     for(int i = 0; i < items.size();i++){
     PhysicsItem *item = dynamic_cast<PhysicsItem*>( items.at(i) );
     item->setEditingEnabled(false);
