@@ -130,11 +130,11 @@ background:white;
     <bool>false</bool>
    </attribute>
    <addaction name="actionStart_Stop"/>
-   <addaction name="actionPause_Play"/>
-   <addaction name="actionStep"/>
-   <addaction name="separator"/>
    <addaction name="actionZoom_In"/>
    <addaction name="actionZoom_Out"/>
+   <addaction name="actionStep"/>
+   <addaction name="separator"/>
+   <addaction name="actionPause_Play"/>
    <addaction name="separator"/>
    <addaction name="actionClone"/>
    <addaction name="actionDelete"/>

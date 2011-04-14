@@ -33,7 +33,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = 0);
+    MainWindow(QWidget *parent = 0, Qt::WFlags f = 0);
     void mousePressEvent(QMouseEvent *event);
  //   void mouseMoveEvent(QMouseEvent *event);
     ~MainWindow();

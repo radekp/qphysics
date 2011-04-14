@@ -15,6 +15,16 @@
 
 /// Developed by Jon Mundall <va7mje+qt@gmail.com>
 
+#ifdef QTOPIA
+
+#include <qtopiaapplication.h>
+#include "mainwindow.h"
+
+QTOPIA_ADD_APPLICATION(QTOPIA_TARGET,MainWindow)
+QTOPIA_MAIN
+
+#else
+
 #include <QtGui/QApplication>
 #include "mainwindow.h"
 
@@ -25,3 +35,5 @@ int main(int argc, char *argv[])
     w.show();
     return a.exec();
 }
+
+#endif

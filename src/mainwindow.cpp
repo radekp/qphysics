@@ -20,11 +20,11 @@
 #include "ui_mainwindow.h"
 
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent, Qt::WFlags f)
+    : QMainWindow(parent, f), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->graphicsView->scale(40.0,40.0);
+    ui->graphicsView->scale(5.0,5.0);
     
  //   this->setWindowState(Qt::WindowFullScreen);
 
