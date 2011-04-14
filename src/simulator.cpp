@@ -72,7 +72,7 @@ void Simulator::StopStart()
       running = false;
 
     for(int i = 0; i < items.size();i++){
-    PhysicsItem *item = dynamic_cast<PhysicsItem*>( items.at(i) );
+    PhysicsItem *item = static_cast<PhysicsItem*>( items.at(i) );
     item->simulationStoping();
     }
     timer->stop();
@@ -81,7 +81,7 @@ void Simulator::StopStart()
     } else {
        world = new World();
         for(int i = 0; i < items.size();i++){
-    PhysicsItem *item = dynamic_cast<PhysicsItem*>( items.at(i) );
+    PhysicsItem *item = static_cast<PhysicsItem*>( items.at(i) );
     item->simulationStarting(world);
     }
         timer->start();

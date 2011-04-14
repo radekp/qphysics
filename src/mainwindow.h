@@ -19,7 +19,6 @@
 #define MAINWINDOW_H
 
 #include <QtGui/QMainWindow>
-#include <QGLWidget>
 #include "simulator.h"
 #include "scenemanager.h"
 #include "world.h"

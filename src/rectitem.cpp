@@ -52,14 +52,14 @@ ADD_TO_FACTORY( RectItem );
 
     init(QRectF(rect_x,rect_y,rect_width,rect_height),material);
     this->setPos(x,y);
-    this->setRotation(rotation);
+    //this->setRotation(rotation);
     this->setEditingEnabled(true);
     }
 
     void RectItem::save(QDataStream &in)
     {
 
-    in << this->rotation();
+    //in << this->rotation();
     in << this->pos().x();
     in << this->pos().y();
     in << _rect.x();
@@ -112,7 +112,7 @@ ADD_TO_FACTORY( RectItem );
         if(_material->solid){bodyDef.type = b2_staticBody;} else {bodyDef.type = b2_dynamicBody;}
 
         bodyDef.position.Set(x(), -y());
-        bodyDef.angle = -(rotation() * (2 * PI)) / 360.0;
+      //  bodyDef.angle = -(rotation() * (2 * PI)) / 360.0;
 
         _body = world->B2DWorld->CreateBody(&bodyDef);
         b2PolygonShape shapeDef;

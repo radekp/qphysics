@@ -40,14 +40,14 @@ ADD_TO_FACTORY( ExampleItem );
 
     init();
     this->setPos(x,y);
-    this->setRotation(rotation);
+    //this->setRotation(rotation);
     this->setEditingEnabled(true);
     }
 
     void ExampleItem::save(QDataStream &in)
     {
 
-    in << this->rotation();
+    //in << this->rotation();
     in << this->pos().x();
     in << this->pos().y();
 

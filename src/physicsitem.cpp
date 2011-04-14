@@ -30,7 +30,9 @@
         this->setEditingEnabled(false);
 
         _pos = this->pos();
+#ifndef QTOPIA
         _angle = this->rotation();
+#endif
 
         buildItem(world);
     }
@@ -43,7 +45,9 @@
 
         this->show();
         this->setPos(_pos);
+#ifndef QTOPIA
         this->setRotation(_angle);
+#endif
 
         this->setEditingEnabled(true);
 
@@ -149,7 +153,9 @@
         angle = (angle/9)*9; //round the angle to the nearest 9
         qDebug() << angle;
 
+#ifndef QTOPIA
         this->setRotation(angle);
+#endif
         QPointF center = this->mapToScene(boundingRect().center());
         center.setX(rotationPoint.x() - center.x());
         center.setY(rotationPoint.y() - center.y());
@@ -189,7 +195,9 @@
         b2Vec2 position = _body->GetPosition();
         float32 angle = _body->GetAngle();
         setPos(position.x, -position.y);
+#ifndef QTOPIA
         setRotation(-(angle * 360.0) / (2 * PI));
+#endif
   }
 
    void PhysicsItem::buildItem(World *world)

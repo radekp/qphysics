@@ -64,8 +64,8 @@ ADD_TO_FACTORY( WeldItem );
 
 
 
-    body1 = dynamic_cast<PhysicsItem*>( items.at(0) );
-    body2 = dynamic_cast<PhysicsItem*>( items.at(1) );
+    body1 = static_cast<PhysicsItem*>( items.at(0) );
+    body2 = static_cast<PhysicsItem*>( items.at(1) );
 
     if(body1 != this && body2 != this){
 
@@ -158,7 +158,7 @@ ADD_TO_FACTORY( WeldItem );
 
      // Update QGraphicsItem's position and rotation from joint body 1.
         b2Vec2 position = weld->_joint->GetAnchorA();
-        setRotation(-(weld->_joint->GetBodyA()->GetAngle() * 360.0) / (2 * PI));
+        //setRotation(-(weld->_joint->GetBodyA()->GetAngle() * 360.0) / (2 * PI));
         setPos(position.x, -position.y);
 
 

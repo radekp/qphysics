@@ -135,7 +135,11 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
 void MainWindow::save()
 {
     if(fileName.size() < 1){
+#ifdef QTOPIA
+        fileName = QDir::homePath() + "/qphysics.phy";
+#else
         fileName = QFileDialog::getSaveFileName(this,QString("save Physics Project"), QDir::homePath(), QString("Physics Project files (*.phy)"));
+#endif
         if(!fileName.contains(".phy")){fileName.append(".phy");}
     }
         sceneManager->save(fileName);
@@ -143,8 +147,11 @@ void MainWindow::save()
 
 void MainWindow::load()
 {
+#ifdef QTOPIA
+        fileName = QDir::homePath() + "/qphysics.phy";
+#else
         fileName = QFileDialog::getOpenFileName(this,QString("Open Physics Project"), QDir::homePath(), QString("Physics Project files (*.phy)"));
-
+#endif
         sceneManager->load(fileName);
 }
 

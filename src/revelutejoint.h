@@ -24,8 +24,9 @@
 #include <QtGui>
 #include "defs.h"
 
-class ReveluteJoint
+class ReveluteJoint : QObject
 {
+	Q_OBJECT
 public:
     ReveluteJoint(b2World *world);
     ~ReveluteJoint();

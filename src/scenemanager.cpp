@@ -53,10 +53,10 @@ void SceneManager::currentItemChanged(QModelIndex idx)
 
     if(obj == "Edit Items"){
     _view->setDragMode(QGraphicsView::RubberBandDrag);
-    _view->setCursor(Qt::ArrowCursor);
+    //_view->setCursor(Qt::ArrowCursor);
 
     for(int i = 0; i < items.size();i++){
-    PhysicsItem *item = dynamic_cast<PhysicsItem*>( items.at(i) );
+    PhysicsItem *item = static_cast<PhysicsItem*>( items.at(i) );
 
     if(!simulator->running){
     item->setEditingEnabled(true);
@@ -65,9 +65,9 @@ void SceneManager::currentItemChanged(QModelIndex idx)
 
     } else {
     _view->setDragMode(QGraphicsView::NoDrag);
-    _view->setCursor(Qt::CrossCursor);
+    //_view->setCursor(Qt::CrossCursor);
     for(int i = 0; i < items.size();i++){
-    PhysicsItem *item = dynamic_cast<PhysicsItem*>( items.at(i) );
+    PhysicsItem *item = static_cast<PhysicsItem*>( items.at(i) );
     item->setEditingEnabled(false);
     }
 
@@ -100,7 +100,7 @@ void SceneManager::deleteItem(QPointF pos)
       //  items.first()->~QGraphicsItem();
       // items.first()->
 
-       PhysicsItem *item = dynamic_cast<PhysicsItem*>( items.first() );
+       PhysicsItem *item = static_cast<PhysicsItem*>( items.first() );
        qDebug() << "Removing: " << item->className();
        delete item;
       // item->kill();
@@ -167,8 +167,8 @@ void SceneManager::deleteItem(QPointF pos)
             PhysicsItem *item = ItemFactory::createItem(className);
             _scene->addItem(item);
             item->load(data);
-            item->setX(item->x()+1);
-            item->setY(item->y()-1);
+            //item->setX(item->x()+1);
+            //item->setY(item->y()-1);
             item->setSelected(true);
         }
 
@@ -192,7 +192,7 @@ void SceneManager::deleteItem(QPointF pos)
 
     for(int i = 0; i < items.size(); i++)
     {
-    PhysicsItem *item = dynamic_cast<PhysicsItem*>( items.at(i) );
+    PhysicsItem *item = static_cast<PhysicsItem*>( items.at(i) );
     in << item->className();
     item->save(in);
     }

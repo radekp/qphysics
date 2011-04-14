@@ -107,7 +107,7 @@ background:white;
      <x>0</x>
      <y>0</y>
      <width>600</width>
-     <height>25</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -139,7 +139,6 @@ background:white;
    <addaction name="actionClone"/>
    <addaction name="actionDelete"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionZoom_In">
    <property name="text">
     <string>Zoom In</string>

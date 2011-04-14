@@ -56,7 +56,9 @@ ADD_TO_FACTORY( CircleItem );
         if(_material->solid){bodyDef.type = b2_staticBody;} else {bodyDef.type = b2_dynamicBody;}
 
         bodyDef.position.Set(x(), -y());
+#ifndef QTOPIA
         bodyDef.angle = -(rotation() * (2 * PI)) / 360.0;
+#endif
 
         _body = world->B2DWorld->CreateBody(&bodyDef);
 
@@ -133,14 +135,16 @@ ADD_TO_FACTORY( CircleItem );
 
     init(QRectF(rect_x,rect_y,rect_width,rect_height),material);
     this->setPos(x,y);
+#ifndef QTOPIA
     this->setRotation(rotation);
+#endif
     this->setEditingEnabled(true);
     }
 
     void CircleItem::save(QDataStream &in)
     {
 
-    in << this->rotation();
+    //in << this->rotation();
     in << this->pos().x();
     in << this->pos().y();
     in << _rect.x();

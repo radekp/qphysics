@@ -66,8 +66,8 @@
 
 
 
-    body1 = dynamic_cast<PhysicsItem*>( items.at(0) );
-    body2 = dynamic_cast<PhysicsItem*>( items.at(1) );
+    body1 = static_cast<PhysicsItem*>( items.at(0) );
+    body2 = static_cast<PhysicsItem*>( items.at(1) );
 
     if(body1 != this && body2 != this){
 
@@ -145,7 +145,9 @@
      if (!step || !this->isVisible()){return;}
      // Update QGraphicsItem's position and rotation from joint body 1.
         b2Vec2 position = bolt->_joint->GetAnchorA();
+#ifndef QTOPIA
         setRotation(-(bolt->_joint->GetBodyA()->GetAngle() * 360.0) / (2 * PI));
+#endif
         setPos(position.x, -position.y);
 
 
