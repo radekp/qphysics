@@ -1,4 +1,4 @@
-Source: qphysics
+Source: qtmoko-qphysics
 Section: comm
 Priority: optional
 Maintainer: Radek Polak <psonek2@seznam.cz>
@@ -8,7 +8,7 @@ Homepage: http://www.qtmoko.org
 Vcs-Git: git://github.com/radekp/qtmoko.git
 Vcs-Browser: https://github.com/radekp/qtmoko
 
-Package: qphysics
+Package: qtmoko-qphysics
 Architecture: any
 Depends:
-Description: Physics game written in Qt
+Description: Physics simulation written in Qt
