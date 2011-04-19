@@ -1,7 +1,7 @@
 [Desktop Entry]
-Comment[]=Chess
-Exec=qtmoko-chess
-Icon=qtmoko-chess/qtmoko-chess
+Comment[]=QPhysics
+Exec=qphysics
+Icon=qphysics/qphysics
 Type=Application
-Name[]=Chess
+Name[]=QPhysics
 
